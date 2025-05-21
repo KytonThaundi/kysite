@@ -60,11 +60,14 @@ const Hero: React.FC = () => {
       >
         <div className="max-w-5xl space-y-6 md:space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white">
-            <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500 transform hover:scale-110 transition-transform duration-300">
-              Kyton
+          <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500 transform hover:scale-110 transition-transform duration-300">
+              Creating
             </span>{' '}
             <span className="inline-block transform hover:translate-y-[-10px] transition-transform duration-300">
-              Marko Thaundi
+              Digital Experiences
+            </span>{' '}
+            <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 transform hover:scale-110 transition-transform duration-300">
+              That Inspire
             </span>
           </h1>
 
