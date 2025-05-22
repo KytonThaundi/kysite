@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 
+const images = import.meta.glob<Record<string, { default: string }>>('../assets/img/*.{png,jpg,jpeg}', { eager: true });
+
 const projectsData = [
   {
     id: 1,
     title: 'EMR Quarterly Releases',
     description: 'Led successful quarterly releases for 5 modules within the Malawi national Electronic Medical Record (EMR) system, improving healthcare data management across the country.',
-    image: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1280',
+    image: images['../assets/img/dash-emr.png']?.default || '',
     tags: ['EMR', 'Project Management', 'Healthcare IT', 'System Development'],
     link: '#',
     github: '#'
@@ -16,7 +18,7 @@ const projectsData = [
     id: 2,
     title: 'TB Electronic Health Records Migration',
     description: 'Successfully led the modernization and migration of the TB Electronic Health Records system into the Malawi EMR, enhancing data integration and accessibility.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1280',
+    image: images['../assets/img/tb-ehr.png']?.default || '',
     tags: ['Data Migration', 'System Integration', 'TB Health Records', 'EMR'],
     link: '#',
     github: '#'
@@ -25,7 +27,7 @@ const projectsData = [
     id: 3,
     title: 'Healthcare Worker Training',
     description: 'Trained over 1,000 healthcare workers in EMRs from over 70 health facilities across Malawi, improving system adoption and data quality.',
-    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1280',
+    image: images['../assets/img/capacity_building.png']?.default || '',
     tags: ['Training', 'Capacity Building', 'EMR', 'Healthcare'],
     link: '#',
     github: '#'
@@ -34,7 +36,7 @@ const projectsData = [
     id: 4,
     title: 'EMR System Maintenance',
     description: 'Maintained an exceptional 96% uptime of EMRs in the 49 Health Facilities managed, ensuring continuous access to critical healthcare data.',
-    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1280',
+    image: images['../assets/img/system_maintainance.png']?.default ?? '',
     tags: ['System Maintenance', 'Uptime Management', 'Technical Support', 'EMR'],
     link: '#',
     github: '#'
