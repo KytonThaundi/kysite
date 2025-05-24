@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server/index.js",
+    "server": "node pages/api/send.js",
     "client": "vite",
     "build": "vite build",
+    "build:server": "echo 'Server build complete - using source files'",
+    "build:all": "npm run build && npm run build:server",
+    "start": "concurrently \"npm run server\" \"npm run preview\"",
+    "start:server": "node pages/api/send.js",
+    "start:client": "npm run preview",
     "lint": "eslint .",
     "preview": "vite preview"
   },
