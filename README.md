@@ -53,9 +53,8 @@ kysite/
 │   ├── App.tsx                  # Main application component
 │   ├── main.tsx                 # Application entry point
 │   └── index.css                # Global styles
-├── pages/                       # Backend API
-│   └── api/
-│       └── send.js              # Email sending endpoint
+├── api/                          # Backend API
+│   └── send.js                  # Email sending endpoint
 ├── dist/                        # Production build output
 ├── public/                      # Public static files
 ├── .env                         # Environment variables
@@ -155,7 +154,7 @@ This will start:
 
 ### Contact Form API
 
-**POST** `/api/send-email`
+**POST** `/api/send`
 
 Send an email through the contact form.
 

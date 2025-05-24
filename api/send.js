@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // API route for sending emails
-app.post('/api/send-email', async (req, res) => {
+app.post('/api/send', async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
