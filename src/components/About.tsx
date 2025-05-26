@@ -85,7 +85,7 @@ const About: React.FC = () => {
 
             <h3 className="text-xl font-bold mb-4 mt-8 text-gray-800 dark:text-gray-200">Education</h3>
             <p className="text-gray-700 dark:text-gray-300">
-              <span className="font-semibold">MBA Management Information Systems</span> - UNICAF (Expected 2025)<br/>
+              <span className="font-semibold">MBA Management Information Systems</span> - UNICAF (Expected 2026)<br/>
               <span className="font-semibold">BSc Management Information Systems</span> - University of Malawi (2016)
             </p>
           </div>
