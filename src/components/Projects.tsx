@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import React from 'react';
+import { Github } from 'lucide-react';
 import ProjectCard from './ProjectCard';
 
 const images = import.meta.glob<Record<string, { default: string }>>('../assets/img/*.{png,jpg,jpeg}', { eager: true });
@@ -7,67 +7,54 @@ const images = import.meta.glob<Record<string, { default: string }>>('../assets/
 const projectsData = [
   {
     id: 1,
-    title: 'EMR Quarterly Releases',
-    description: 'Led successful quarterly releases for 5 modules within the Malawi national Electronic Medical Record (EMR) system, improving healthcare data management across the country.',
+    title: 'EMR quarterly releases',
+    description: 'Led quarterly releases across five modules in Malawi’s national Electronic Medical Record system, supporting ongoing improvements to healthcare data management.',
+    impact: '5 EMR modules',
     image: images['../assets/img/dash-emr.png']?.default || '',
-    tags: ['EMR', 'Project Management', 'Healthcare IT', 'System Development'],
-    link: '#',
-    github: '#'
+    tags: ['Digital health', 'Release coordination', 'Requirements analysis']
   },
   {
     id: 2,
-    title: 'TB Electronic Health Records Migration',
-    description: 'Successfully led the modernization and migration of the TB Electronic Health Records system into the Malawi EMR, enhancing data integration and accessibility.',
+    title: 'TB health records migration',
+    description: 'Led the modernization and migration of the TB Electronic Health Records system into Malawi’s EMR, improving integration and access to records.',
+    impact: 'System integration',
     image: images['../assets/img/tb-ehr.png']?.default || '',
-    tags: ['Data Migration', 'System Integration', 'TB Health Records', 'EMR'],
-    link: '#',
-    github: '#'
+    tags: ['Data migration', 'System integration', 'EMR']
   },
   {
     id: 3,
-    title: 'Healthcare Worker Training',
-    description: 'Trained over 1,000 healthcare workers in EMRs from over 70 health facilities across Malawi, improving system adoption and data quality.',
+    title: 'Healthcare worker training',
+    description: 'Trained more than 1,000 healthcare workers on EMR use across more than 70 facilities in Malawi, strengthening adoption and data quality.',
+    impact: '1,000+ people · 70+ facilities',
     image: images['../assets/img/capacity_building.png']?.default || '',
-    tags: ['Training', 'Capacity Building', 'EMR', 'Healthcare'],
-    link: '#',
-    github: '#'
+    tags: ['Training', 'Capacity building', 'Digital health']
   },
   {
     id: 4,
-    title: 'EMR System Maintenance',
-    description: 'Maintained an exceptional 96% uptime of EMRs in the 49 Health Facilities managed, ensuring continuous access to critical healthcare data.',
-    image: images['../assets/img/system_maintainance.png']?.default ?? '',
-    tags: ['System Maintenance', 'Uptime Management', 'Technical Support', 'EMR'],
-    link: '#',
-    github: '#'
+    title: 'EMR reliability and support',
+    description: 'Maintained 96% EMR uptime across 49 managed health facilities, helping keep critical healthcare systems available.',
+    impact: '96% uptime · 49 facilities',
+    image: images['../assets/img/system_maintainance.png']?.default || '',
+    tags: ['System reliability', 'Technical support', 'EMR']
   }
 ];
 
 const Projects: React.FC = () => {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-800">
+    <section id="projects" className="scroll-mt-20 bg-gray-50 py-24 dark:bg-gray-800">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
-            Key Achievements
+            Selected impact
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Explore some of my notable achievements that demonstrate my expertise in healthcare IT systems,
-            project management, and technical leadership.
+            A sample of outcomes from my digital health work. The same business analysis, stakeholder coordination, and systems delivery skills apply across industries.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
           {projectsData.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              isHovered={hoveredProject === project.id}
-              onHover={() => setHoveredProject(project.id)}
-              onLeave={() => setHoveredProject(null)}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
@@ -76,10 +63,10 @@ const Projects: React.FC = () => {
             href="https://github.com/KytonThaundi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-5 py-3 font-semibold text-gray-800 transition-colors hover:border-purple-500 hover:text-purple-800 dark:border-gray-600 dark:text-gray-100 dark:hover:border-purple-400 dark:hover:text-purple-200"
           >
-            <Github className="w-5 h-5" />
-            <span>View More on GitHub</span>
+            <Github className="h-5 w-5" aria-hidden="true" />
+            <span>Visit my GitHub</span>
           </a>
         </div>
       </div>

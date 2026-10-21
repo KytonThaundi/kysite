@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -27,30 +28,8 @@ body {
   background: theme('colors.purple.600');
 }
 
-.section-transition {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.section-transition.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.float-delay-1 {
-  animation-delay: -2s;
-}
-
-.float-delay-2 {
-  animation-delay: -4s;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
