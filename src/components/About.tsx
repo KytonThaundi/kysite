@@ -1,125 +1,139 @@
 import React from 'react';
-import { Code, Layout, Server, Sparkles, PenTool, Gauge } from 'lucide-react';
+import { Code, Database, HeartPulse, MessagesSquare, SearchCheck, Settings2 } from 'lucide-react';
 
 const skillsData = [
   {
-    icon: <Code className="w-6 h-6" />,
-    title: 'Software Development',
-    description: 'Developing and maintaining software applications with focus on quality and performance.',
-    skills: ['C#', 'PHP', 'JavaScript', 'MySQL', 'Docker']
+    icon: <SearchCheck className="h-5 w-5" aria-hidden="true" />,
+    title: 'Business & systems analysis',
+    skills: ['Business process analysis', 'Requirements gathering', 'System design', 'Documentation']
   },
   {
-    icon: <Server className="w-6 h-6" />,
-    title: 'System Analysis',
-    description: 'Analyzing business processes and requirements to propose effective technical solutions.',
-    skills: ['Business Process Analysis', 'Requirements Gathering', 'System Design', 'Documentation']
+    icon: <HeartPulse className="h-5 w-5" aria-hidden="true" />,
+    title: 'Health informatics',
+    skills: ['EMR systems', 'Health data management', 'Healthcare IT', 'PEPFAR program']
   },
   {
-    icon: <Layout className="w-6 h-6" />,
-    title: 'Database Management',
-    description: 'Managing and optimizing database systems to ensure data integrity and performance.',
-    skills: ['MySQL', 'MSSQL', 'Data Security', 'Data Governance']
+    icon: <Settings2 className="h-5 w-5" aria-hidden="true" />,
+    title: 'Implementation & support',
+    skills: ['System deployment', 'Quality assurance', 'Troubleshooting', 'Technical training']
   },
   {
-    icon: <Sparkles className="w-6 h-6" />,
-    title: 'Health Informatics',
-    description: 'Implementing and maintaining electronic health record systems and health information systems.',
-    skills: ['EMR Systems', 'Health Data Management', 'Healthcare IT', 'PEPFAR Program']
+    icon: <Database className="h-5 w-5" aria-hidden="true" />,
+    title: 'Data & databases',
+    skills: ['MySQL', 'MSSQL', 'Data security', 'Data governance']
   },
   {
-    icon: <PenTool className="w-6 h-6" />,
-    title: 'Leadership & Communication',
-    description: 'Leading teams and effectively communicating with stakeholders at all levels.',
-    skills: ['Team Leadership', 'Stakeholder Management', 'Technical Training', 'Mentorship']
+    icon: <Code className="h-5 w-5" aria-hidden="true" />,
+    title: 'Software & development tools',
+    skills: ['Ruby on Rails', 'Vue.js', 'React', 'Ionic', 'TypeScript', 'JavaScript', 'PHP', 'C#', 'Tailwind CSS', 'Vite', 'Node.js', 'Express', 'Docker']
   },
   {
-    icon: <Gauge className="w-6 h-6" />,
-    title: 'Problem-solving',
-    description: 'Identifying and resolving complex technical issues in business information systems.',
-    skills: ['Troubleshooting', 'System Testing', 'Quality Assurance', 'Issue Resolution']
+    icon: <MessagesSquare className="h-5 w-5" aria-hidden="true" />,
+    title: 'Working with people',
+    skills: ['Stakeholder management', 'Team leadership', 'Mentorship', 'Capacity building']
+  }
+];
+
+const experience = [
+  {
+    role: 'Business Analyst',
+    organization: 'Elizabeth Glaser Pediatric AIDS Foundation',
+    location: 'Supporting Malawi’s Digital Health Division (DHD)',
+    dates: 'April 2024 – Present',
+    description: 'Support the Digital Health Division in building the Malawi Healthcare Information System (MaHIS). Coordinate stakeholders, analyze business processes, shape technical specifications, and support quality assurance.'
+  },
+  {
+    role: 'Health Informatics Systems Officer',
+    organization: 'Elizabeth Glaser Pediatric AIDS Foundation',
+    location: 'Blantyre, Malawi',
+    dates: 'September 2020 – April 2024',
+    description: 'Led system setup and configuration, supported system uptime and data security, and provided technical assistance and training to facility stakeholders.'
+  },
+  {
+    role: 'Support and Deployment Officer',
+    organization: 'Baobab Health Trust',
+    location: 'Lilongwe, Malawi',
+    dates: 'January 2019 – August 2020',
+    description: 'Supported system deployments and updates, monitored performance, worked with partners, and prepared reports for stakeholders.'
+  },
+  {
+    role: 'Software Development Engineer',
+    organization: 'The Mile Ltd',
+    location: 'Blantyre, Malawi',
+    dates: 'May 2017 – December 2018',
+    description: 'Developed and maintained client software, analyzed systems, supported networking projects, and provided technical guidance and proposals.'
   }
 ];
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 bg-white dark:bg-gray-900 overflow-hidden relative">
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-300/20 dark:from-purple-600/10 dark:to-pink-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-gradient-to-br from-blue-400/20 to-teal-300/20 dark:from-blue-600/10 dark:to-teal-500/10 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="about" className="scroll-mt-20 overflow-hidden bg-white py-24 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
-            About Me
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-purple-700 dark:text-purple-300">
+            How I work
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-950 dark:text-white md:text-5xl">
+            From real-world needs to systems people can rely on
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Information Technology professional with a proven track record of delivering innovative solutions that drive organizational growth.
+          <p className="mt-5 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          At my core, I am a business analyst. I clarify needs, map processes, and connect stakeholders with technical teams to deliver practical systems. Much of my experience is in digital health, and the analysis and delivery skills I bring are useful across industries.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-20">
-          <div className="prose prose-lg dark:prose-invert mx-auto">
-            <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Professional Experience</h3>
-
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">System Analyst at Elizabeth Glaser Pediatric AIDS Foundation- Lilongwe Malawi</h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">April 2024 – Present</p>
-            <p className="text-gray-700 dark:text-gray-300">
-              Serving as the main client interface for application development projects, coordinating activities with stakeholders,
-              analyzing business processes, proposing technical specifications, and ensuring quality assurance.
-            </p>
-
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6">Health Informatics Systems Officer at Elizabeth Glaser Pediatric AIDS Foundation- Blantyre Malawi</h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">September 2020 – April 2024</p>
-            <p className="text-gray-700 dark:text-gray-300">
-              Led system setup and configuration, ensured system uptime, implemented data security measures,
-              and provided technical assistance and training to facility stakeholders.
-            </p>
-
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6">Support and Deployment Officer at Baobab Health Trust- Lilongwe Malawi</h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">January 2019 – August 2020</p>
-            <p className="text-gray-700 dark:text-gray-300">
-              Performed system deployments and updates, monitored system performance, built relationships with partners,
-              and delivered quality reports to stakeholders.
-            </p>
-
-            <h3 className="text-xl font-bold mb-4 mt-8 text-gray-800 dark:text-gray-200">Education</h3>
-            <p className="text-gray-700 dark:text-gray-300">
-              <span className="font-semibold">MBA Management Information Systems</span> - UNICAF (2026)<br/>
-              <span className="font-semibold">BSc Management Information Systems</span> - University of Malawi (2016)
-            </p>
+        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <h3 className="mb-6 text-2xl font-bold text-gray-950 dark:text-white">Experience</h3>
+            <ol className="space-y-8 border-l-2 border-purple-200 pl-6 dark:border-purple-900">
+              {experience.map((item) => (
+                <li key={`${item.role}-${item.dates}`} className="relative">
+                  <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-purple-600 ring-4 ring-white dark:bg-purple-400 dark:ring-gray-900" aria-hidden="true" />
+                  <p className="text-sm font-semibold text-purple-700 dark:text-purple-300">{item.dates}</p>
+                  <h4 className="mt-1 text-lg font-bold text-gray-900 dark:text-white">{item.role}</h4>
+                  <p className="mt-1 font-medium text-gray-700 dark:text-gray-300">{item.organization}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{item.location}</p>
+                  <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300">{item.description}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
-          Skills & Expertise
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillsData.map((skill, index) => (
-            <div
-              key={index}
-              className="group bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div className="flex items-center mb-4 text-purple-600 dark:text-purple-400">
-                <div className="mr-3 bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg group-hover:bg-purple-200 dark:group-hover:bg-purple-800/40 transition-colors duration-300">
-                  {skill.icon}
+          <aside className="space-y-8">
+            <div className="rounded-2xl bg-gray-50 p-6 dark:bg-gray-800">
+              <h3 className="text-xl font-bold text-gray-950 dark:text-white">Education</h3>
+              <div className="mt-5 space-y-5">
+                <div>
+                  <p className="font-semibold text-gray-900 dark:text-white">MBA, Management Information Systems</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">UNICAF · 2026</p>
                 </div>
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-200">{skill.title}</h4>
+                <div>
+                  <p className="font-semibold text-gray-900 dark:text-white">BSc, Management Information Systems</p>
+                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">University of Malawi · 2016</p>
+                </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">{skill.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {skill.skills.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full"
-                  >
-                    {item}
-                  </span>
+            </div>
+
+            <div>
+              <h3 className="mb-4 text-xl font-bold text-gray-950 dark:text-white">Capabilities</h3>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {skillsData.map((skill) => (
+                  <div key={skill.title} className="rounded-xl border border-gray-200 p-4 dark:border-gray-700">
+                    <div className="flex items-center gap-2 text-purple-700 dark:text-purple-300">
+                      {skill.icon}
+                      <h4 className="font-semibold text-gray-900 dark:text-white">{skill.title}</h4>
+                    </div>
+                    <ul className="mt-3 flex flex-wrap gap-2">
+                      {skill.skills.map((item) => (
+                        <li key={item} className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
               </div>
             </div>
-          ))}
+          </aside>
         </div>
       </div>
     </section>

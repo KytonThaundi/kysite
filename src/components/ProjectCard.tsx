@@ -1,103 +1,46 @@
-import React, { useState } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import React from 'react';
 
 interface Project {
   id: number;
   title: string;
   description: string;
+  impact: string;
   image: string;
   tags: string[];
-  link: string;
-  github: string;
 }
 
-interface ProjectCardProps {
-  project: Project;
-  isHovered: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ 
-  project, 
-  isHovered,
-  onHover,
-  onLeave
-}) => {
-  const [imageError, setImageError] = useState(false);
-
-  const handleImageError = () => {
-    setImageError(true);
-  };
-
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div 
-      className="group rounded-xl overflow-hidden bg-white dark:bg-gray-900 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-    >
-      <div className="relative overflow-hidden aspect-video">
-        {!imageError ? (
-          <img 
-            src={project.image} 
-            alt={project.title}
-            onError={handleImageError}
-            className={`w-full h-full object-cover transform transition-transform duration-700 ${
-              isHovered ? 'scale-110' : 'scale-100'
-            }`}
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-            <span className="text-gray-500 dark:text-gray-400">Image not available</span>
-          </div>
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-          <div className="p-6 w-full">
-            <div className="flex justify-between items-center">
-              <h3 className="text-xl font-bold text-white">
-                {project.title}
-              </h3>
-              <div className="flex gap-3">
-                <a 
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-gray-800/80 hover:bg-gray-900 rounded-full text-white transition-colors duration-300"
-                  aria-label={`View GitHub repository for ${project.title}`}
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-                <a 
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-gray-800/80 hover:bg-gray-900 rounded-full text-white transition-colors duration-300"
-                  aria-label={`View live demo for ${project.title}`}
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <article className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-gray-200/70 transition-shadow hover:shadow-xl dark:bg-gray-900 dark:ring-gray-700">
+      <div className="h-28 overflow-hidden bg-gray-100 dark:bg-gray-800 sm:h-32">
+        <img
+          src={project.image}
+          alt=""
+          className="h-full w-full object-cover object-center opacity-80 saturate-50"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <div className="p-6">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag, index) => (
-            <span 
-              key={index} 
-              className="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <p className="text-gray-600 dark:text-gray-300">
+      <div className="p-6 md:p-7">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-purple-700 dark:text-purple-300">
+          {project.impact}
+        </p>
+        <h3 className="text-xl font-bold text-gray-950 dark:text-white">{project.title}</h3>
+        <p className="mt-3 leading-relaxed text-gray-700 dark:text-gray-300">
           {project.description}
         </p>
+        <ul aria-label={`${project.title} areas`} className="mt-5 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full bg-purple-50 px-3 py-1 text-xs font-medium text-purple-800 dark:bg-purple-900/30 dark:text-purple-200"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </article>
   );
 };
 

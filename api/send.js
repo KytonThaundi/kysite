@@ -56,8 +56,11 @@ app.post('/api/send', async (req, res) => {
   }
 });
 
-// Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Backend server is running on http://localhost:${PORT}`);
-});
+export default app;
+
+if (process.env.VERCEL !== '1') {
+  const PORT = 5000;
+  app.listen(PORT, () => {
+    console.log(`Backend server is running on http://localhost:${PORT}`);
+  });
+}
